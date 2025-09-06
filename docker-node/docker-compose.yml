@@ -1,11 +1,11 @@
 services:
   siteproxy:
     image: node:22
-    container_name: mirror-node
+    container_name: siteproxy-node
     restart: unless-stopped
     ports:
       - 127.0.0.1:5006:5006
     volumes:
-      - ../:/home/node/mirror/
-    working_dir: /home/node/mirror/
-    entrypoint: ["node","/home/node/mirror/bundle.cjs"]
+      - ../:/home/node/siteproxy/
+    working_dir: /home/node/siteproxy/
+    entrypoint: ["node","/home/node/siteproxy/bundle.cjs"]
